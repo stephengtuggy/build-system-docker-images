@@ -41,11 +41,25 @@ jobs:
           - 'rockylinux/rockylinux:9.7'
           - 'rockylinux/rockylinux:9.6'
           - 'manjarolinux/base'
+          - 'dhi.io/python:3.14.3-debian13-dev'
           # - 'alex5402/endeavouros'
           # - 'funtoo/stage3-generic_64'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Docker Login
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef #v3.6.0
+        with:
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_KEY }}
+
+      - name: Docker Hardened Images Login
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef #v3.6.0
+        with:
+          registry: dhi.io
+          username: ${{ secrets.DOCKER_HUB_USER }}
+          password: ${{ secrets.DOCKER_HUB_KEY }}
+
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6.0.1
         with:
