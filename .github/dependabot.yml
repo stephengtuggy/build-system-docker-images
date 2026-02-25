@@ -6,15 +6,15 @@ registries:
     type: docker-registry
     url: "hub.docker.com"
     replaces-base: true
-    username: ${{ secrets.DOCKER_HUB_USER }}
-    password: ${{ secrets.DOCKER_HUB_KEY }}
+    username: "${{ secrets.DOCKER_USERNAME }}"
+    password: "${{ secrets.DOCKER_TOKEN }}"
 
   docker-hardened:
     type: "docker-registry"
     url: "dhi.io"
     replaces-base: false
-    username: ${{ secrets.DOCKER_HUB_USER }}
-    password: ${{ secrets.DOCKER_HUB_KEY }}
+    username: "${{ secrets.DOCKER_USERNAME }}"
+    password: "${{ secrets.DOCKER_TOKEN }}"
 
 updates:
   - package-ecosystem: "docker"
