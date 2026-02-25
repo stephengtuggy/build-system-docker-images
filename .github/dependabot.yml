@@ -1,30 +1,6 @@
 version: 2
 
-# From https://stackoverflow.com/a/79855463
-registries:
-  docker:
-    type: docker-registry
-    url: "hub.docker.com"
-    replaces-base: true
-    username: "${{ secrets.DOCKER_USERNAME }}"
-    password: "${{ secrets.DOCKER_TOKEN }}"
-
-  docker-hardened:
-    type: "docker-registry"
-    url: "dhi.io"
-    replaces-base: false
-    username: "${{ secrets.DOCKER_USERNAME }}"
-    password: "${{ secrets.DOCKER_TOKEN }}"
-
 updates:
-  - package-ecosystem: "docker"
-    directory: "/"
-    registries:
-      - "docker"
-      - "docker-hardened"
-    schedule:
-      interval: "weekly"
-
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
