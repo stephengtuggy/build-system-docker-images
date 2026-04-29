@@ -375,7 +375,7 @@ function bootstrapOnLinuxMint ()
 
     echo "Linux Mint base Distros do NOT support SDL3"
     case "$LINUX_CODENAME" in
-        "wilma"|"zara")
+        "wilma"|"zara"|"zena"|"alfa")
             apt-get -qy install \
                             git \
                             cmake \
