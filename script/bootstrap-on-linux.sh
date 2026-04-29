@@ -221,7 +221,7 @@ function bootstrapOnUbuntu()
     fi
 
     case "$LINUX_CODENAME" in
-        "questing"|"plucky")
+        "resolute|questing"|"plucky")
             apt-get -qy install \
                             git \
                             cmake \

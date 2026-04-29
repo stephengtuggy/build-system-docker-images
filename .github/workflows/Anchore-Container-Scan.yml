@@ -25,6 +25,7 @@ jobs:
       fail-fast: false
       matrix:
         FROM:
+          - 'ubuntu:resolute'
           - 'ubuntu:questing'
           - 'ubuntu:plucky'
           - 'ubuntu:noble'
