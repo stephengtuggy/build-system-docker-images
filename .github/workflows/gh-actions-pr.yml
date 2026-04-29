@@ -18,7 +18,6 @@ jobs:
           - 'ubuntu:questing'
           - 'ubuntu:plucky'
           - 'ubuntu:noble'
-          - 'linuxmintd/mint23-amd64'
           - 'linuxmintd/mint22.3-amd64'
           - 'linuxmintd/mint22.2-amd64'
           - 'linuxmintd/mint22-amd64'
