@@ -43,6 +43,7 @@ jobs:
           - 'rockylinux/rockylinux:9.6'
           - 'manjarolinux/base'
           - 'dhi.io/python:3.14.3-debian13-dev'
+          - 'dhi.io/python:3.14-debian13-dev'
           - 'dhi.io/python:3.13.12-debian13-dev'
           - 'dhi.io/python:3.13-debian13-dev'
           # - 'alex5402/endeavouros'
@@ -69,7 +70,7 @@ jobs:
           IS_RELEASE: 0
 
       - name: Build local container
-        uses: docker/build-push-action@d08e5c354a6adb9ed34480a06d141179aa583294 #v7.0.0
+        uses: docker/build-push-action@bcafcacb16a39f128d818304e6c9c0c18556b85f #v7.1.0
         env:
           FROM:       ${{ matrix.FROM }}
           IS_RELEASE: 0
@@ -80,7 +81,7 @@ jobs:
           load: true
 
       - name: Scan image
-        uses: anchore/scan-action@7037fa011853d5a11690026fb85feee79f4c946c #v7.3.2
+        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 #v7.4.0
         id: scan
         with:
           image: "image:localbuild/${{ matrix.FROM }}"
