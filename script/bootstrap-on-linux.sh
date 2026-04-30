@@ -113,7 +113,6 @@ function bootstrapOnDebian()
                             libsdl2-image-dev \
                             libsdl3-dev \
                             libsdl3-image-dev \
-                            libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
                             libboost-log-dev \
@@ -185,7 +184,6 @@ function bootstrapOnDebian()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libpostproc-dev \
                             freeglut3-dev \
                             libboost-python1.81-dev \
                             libboost-log1.81-dev \
@@ -221,7 +219,7 @@ function bootstrapOnUbuntu()
     fi
 
     case "$LINUX_CODENAME" in
-        "questing"|"plucky")
+        "resolute"|"questing"|"plucky")
             apt-get -qy install \
                             git \
                             cmake \
@@ -272,7 +270,6 @@ function bootstrapOnUbuntu()
                             libsdl2-image-dev \
                             libsdl3-dev \
                             libsdl3-image-dev \
-                            libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
                             libboost-log-dev \
@@ -338,7 +335,6 @@ function bootstrapOnUbuntu()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
                             libboost-log-dev \
@@ -375,7 +371,7 @@ function bootstrapOnLinuxMint ()
 
     echo "Linux Mint base Distros do NOT support SDL3"
     case "$LINUX_CODENAME" in
-        "wilma"|"zara")
+        "wilma"|"zara"|"zena"|"alfa")
             apt-get -qy install \
                             git \
                             cmake \
@@ -424,7 +420,6 @@ function bootstrapOnLinuxMint ()
                             libgl1-mesa-dev \
                             libsdl2-dev \
                             libsdl2-image-dev \
-                            libpostproc-dev \
                             freeglut3-dev \
                             libboost-python-dev \
                             libboost-log-dev \
@@ -589,7 +584,7 @@ function bootstrapOnOpenSuseLeap ()
 function bootstrapOnFedora ()
 {
     export fedoraVersion=${LINUX_VERSION_ID}
-    export fedoraMaxSupportedVersion=43
+    export fedoraMaxSupportedVersion=44
     export fedoraMinSupportedVersion=42
     if [ ${fedoraVersion} -gt ${fedoraMaxSupportedVersion} ]
     then
