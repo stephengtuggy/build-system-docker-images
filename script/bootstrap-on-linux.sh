@@ -9,7 +9,7 @@
 # @param  : just one parameter, either a 1 or a 0, to indicate whether or not to
 #           UPDATE_ALL_SYSTEM_PACKAGES
 #====================================
-# Copyright (C) 2020-2025 Roy Falk, Stephen G. Tuggy, Benjamen R. Meyer,
+# Copyright (C) 2020-2026 Roy Falk, Stephen G. Tuggy, Benjamen R. Meyer,
 # and other Vega Strike contributors
 #
 # This file is part of Vega Strike.
@@ -30,7 +30,7 @@
 set -e
 
 echo "------------------------------------------"
-echo "--- bootstrap-on-linux.sh | 2025-12-26 ---"
+echo "--- bootstrap-on-linux.sh | 2026-05-02 ---"
 echo "------------------------------------------"
 
 UPDATE_ALL_SYSTEM_PACKAGES="$1"
@@ -555,7 +555,9 @@ function bootstrapOnOpenSuseLeap ()
                                     freeglut-devel \
                                     libopenal0 \
                                     openal-soft-devel \
-                                    libSDL2-devel \
+                                    SDL3-devel \
+                                    SDL3_image-devel \
+                                    sdl2-compat-devel \
                                     libSDL2_image-devel \
                                     libvorbis-devel \
                                     libglvnd-devel \
@@ -1140,10 +1142,7 @@ case "${LINUX_ID}" in
     "fedora")
         bootstrapOnFedora
         ;;
-    "rhel")
-        bootstrapOnRedHat
-        ;;
-    "redhat")
+    "rhel"|"redhat")
         bootstrapOnRedHat
         ;;
     "rocky")
