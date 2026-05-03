@@ -622,8 +622,8 @@ function bootstrapOnOpenSuseLeap ()
                                     openal-soft-devel \
                                     SDL3-devel \
                                     SDL3_image-devel \
-                                    sdl2-compat-devel \
-                                    libSDL2_image-devel \
+                                    SDL2-devel \
+                                    SDL2_image-devel \
                                     libvorbis-devel \
                                     libglvnd-devel \
                                     libjpeg-turbo \
@@ -634,7 +634,7 @@ function bootstrapOnOpenSuseLeap ()
                                     libexpat-devel \
                                     libgtk-3-0 \
                                     gtk3-devel \
-                                    python3-devel \
+                                    python313-devel \
                                     clang \
                                     glu-devel \
                                     Mesa-devel \
